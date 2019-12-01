@@ -1,11 +1,245 @@
-INSERT INTO House (id, version, address) VALUES (1, 0, 'ул.Цюрупы, 16');
+INSERT INTO Organization (id, name, full_name, inn, kpp, adress, phone) VALUES (0, 'Рога и копыта', 'Корпорация Рога и Копыта', 1234567890, 0000000001, 'Москва, Кремль', '+77777777777');
+INSERT INTO Organization (id, name, full_name, inn, kpp, adress, phone) VALUES (1, 'Инфолайн', 'Организация Инфолайн', 0987654321, 0000000002, 'Москва, Мытищи', '+79999999999');
 
-INSERT INTO House (id, version, address) VALUES (2, 0, 'ул.Лунина, 7');
+INSERT INTO Office (id, organization_id, name, address, phone) VALUES (0, 0, 'Центральный РиП','Москва, Кремль','+77777777777');
+INSERT INTO Office (id, organization_id, name, address, phone) VALUES (1, 0, 'Филиал РиП','Москва, НеКремль','+74955555555');
 
-INSERT INTO Person (id, version, first_name, age) VALUES (1, 0, 'Пётр', 20);
+INSERT INTO Office (id, organization_id, name, address, phone) VALUES (2, 1, 'Центральный ИНФОЛАЙН','Москва, Мытищи','+79999999999');
+INSERT INTO Office (id, organization_id, name, address, phone) VALUES (3, 1, 'Филиал ИНФОЛАЙН','Москва, НеМытищи','+74957777777');
 
-INSERT INTO Person (id, version, first_name, age) VALUES (2, 0, 'John', 25);
+INSERT INTO Doc (code,name) VALUES (21,'Паспорт гражданина Российской Федерации');
+INSERT INTO Doc (code,name) VALUES (91,'Иные документы');
 
-INSERT INTO Person_House (person_id, house_id) VALUES (1, 1);
+INSERT INTO Country (code,name) VALUES (643, 'Россия');
+INSERT INTO Country (code,name) VALUES (840, 'США');
 
-INSERT INTO Person_House (person_id, house_id) VALUES (1, 2);
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (0,
+                    0,
+                    'Иван',
+                    'Иванов',
+                    'Иванович',
+                    'Центральный',
+                    '+75554443322',
+                    '21',
+                    0001,
+                    '2000-12-31',
+                    '643'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (1,
+                    0,
+                    'Мария',
+                    'Иванова',
+                    'Сидоровна',
+                    'Центральный',
+                    '+75554443321',
+                    '91',
+                    0002,
+                    '2001-12-31',
+                    '840'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (2,
+                    0,
+                    'Петр',
+                    'Ильич',
+                    'Крылышкин',
+                    'Центральный',
+                    '+75554443320',
+                    '21',
+                    0003,
+                    '2002-12-31',
+                    '643'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (3,
+                    1,
+                    'Максим',
+                    'Владимирович',
+                    'Курицын',
+                    'Филиал',
+                    '+75554443323',
+                    '21',
+                    0004,
+                    '2003-12-31',
+                    '643'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (4,
+                    1,
+                    'Евгения',
+                    'Николавна',
+                    'Булочкина',
+                    'Филиал',
+                    '+75554443324',
+                    '21',
+                    0005,
+                    '2004-12-31',
+                    '643'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (5,
+                    2,
+                    'Николай',
+                    'Афанасьевич',
+                    'Петров',
+                    'Центральный',
+                    '+75554443325',
+                    '91',
+                    0006,
+                    '2005-12-31',
+                    '840'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (6,
+                    2,
+                    'Владимир',
+                    'Игнатьевич',
+                    'Камушкин',
+                    'Центральный',
+                    '+75554443326',
+                    '91',
+                    0007,
+                    '2006-12-31',
+                    '840'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (7,
+                    2,
+                    'Геннадий',
+                    'Игоревич',
+                    'Носков',
+                    'Центральный',
+                    '+75554443327',
+                    '21',
+                    0008,
+                    '2007-12-31',
+                    '643'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (8,
+                    3,
+                    'Алиса',
+                    'Васильевна',
+                    'Ватрушкина',
+                    'Филиал',
+                    '+75554443328',
+                    '21',
+                    0009,
+                    '2008-12-31',
+                    '643'
+                    );
+INSERT INTO User (id,
+                  office_id,
+                  first_name,
+                  second_name,
+                  middle_name,
+                  position,
+                  phone,
+                  doc_code,
+                  doc_number,
+                  doc_date,
+                  citizenship_code)
+            VALUES (8,
+                    3,
+                    'Екатерина',
+                    'Александровна',
+                    'Волкова',
+                    'Филиал',
+                    '+75554443329',
+                    '21',
+                    0010,
+                    '2009-12-31',
+                    '643'
+                    );
