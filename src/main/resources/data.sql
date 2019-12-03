@@ -231,7 +231,7 @@ INSERT INTO User (id,
                   doc_number,
                   doc_date,
                   citizenship_code)
-            VALUES (8,
+            VALUES (9,
                     3,
                     'Екатерина',
                     'Александровна',

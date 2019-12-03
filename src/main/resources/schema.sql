@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Organization (
     inn        INTEGER NOT NULL                     COMMENT 'ИНН',
     kpp        INTEGER UNIQUE NOT NULL              COMMENT 'КПП',
     address    VARCHAR(100) NOT NULL                COMMENT 'Адрес организации',
-    phone      VARCHAR(10)                          COMMENT 'Телефон организации',
+    phone      VARCHAR(12)                          COMMENT 'Телефон организации',
     is_active  INTEGER DEFAULT (1) NOT NULL         COMMENT 'Признак активности: 0 = не активен; 1 = активен.'
 );
 COMMENT ON TABLE Organization IS 'Организация';
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS Office (
     organization_id INTEGER NOT NULL                         COMMENT 'Идентификатор организации офиса',
     name            VARCHAR(50) NOT NULL                     COMMENT 'Наименование офиса',
     address         VARCHAR(100) NOT NULL                    COMMENT 'Адрес офиса',
-    phone           VARCHAR(10) NOT NULL                     COMMENT 'Телефон офиса',
+    phone           VARCHAR(12) NOT NULL                     COMMENT 'Телефон офиса',
     is_active       INTEGER DEFAULT (1) NOT NULL             COMMENT 'Признак активности: 0 = не активен; 1 = активен.'
 );
 COMMENT ON TABLE Office IS 'Офис';
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS User (
     second_name         VARCHAR(20)                     COMMENT 'Фамилия',
     middle_name         VARCHAR(20)                     COMMENT 'Отчество',
     position            VARCHAR(50) NOT NULL            COMMENT 'Позиция пользователя',
-    phone               VARCHAR(10)                     COMMENT 'Телефон пользователя',
+    phone               VARCHAR(12)                     COMMENT 'Телефон пользователя',
     doc_code            VARCHAR(50) NOT NULL            COMMENT 'Имя документа удостоверяющего личность',
     doc_number          INTEGER                         COMMENT 'Номер документа удостоверяющего личность',
     doc_date            DATE                            COMMENT 'Дата выдачи документа удостоверяющего личность',
