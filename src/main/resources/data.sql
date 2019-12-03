@@ -1,5 +1,5 @@
-INSERT INTO Organization (id, name, full_name, inn, kpp, adress, phone) VALUES (0, 'Рога и копыта', 'Корпорация Рога и Копыта', 1234567890, 0000000001, 'Москва, Кремль', '+77777777777');
-INSERT INTO Organization (id, name, full_name, inn, kpp, adress, phone) VALUES (1, 'Инфолайн', 'Организация Инфолайн', 0987654321, 0000000002, 'Москва, Мытищи', '+79999999999');
+INSERT INTO Organization (id, name, full_name, inn, kpp, address, phone) VALUES (0, 'Рога и копыта', 'Корпорация Рога и Копыта', 1234567890, 0000000001, 'Москва, Кремль', '+77777777777');
+INSERT INTO Organization (id, name, full_name, inn, kpp, address, phone) VALUES (1, 'Инфолайн', 'Организация Инфолайн', 0987654321, 0000000002, 'Москва, Мытищи', '+79999999999');
 
 INSERT INTO Office (id, organization_id, name, address, phone) VALUES (0, 0, 'Центральный РиП','Москва, Кремль','+77777777777');
 INSERT INTO Office (id, organization_id, name, address, phone) VALUES (1, 0, 'Филиал РиП','Москва, НеКремль','+74955555555');
