@@ -18,26 +18,47 @@ import java.util.Set;
 @Table(name = "Office")
 public class Office {
 
+    /**
+     * Уникальный идентификатор
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
+    /**
+     * Служебное поле hibernate
+     */
     @Version
     private Integer version;
 
+    /**
+     * Идентификатор организации
+     */
     @Column(name = "organization_id", nullable = false)
     private Long organization_id;
 
+    /**
+     * Наименование офиса
+     */
     @Column(name = "name", nullable = false)
     private String name;
 
+    /**
+     * Адрес офиса
+     */
     @Column(name = "address", nullable = false)
     private String address;
 
+    /**
+     * Телефон офиса
+     */
     @Column(name = "phone", nullable = false)
     private String phone;
 
+    /**
+     * Признак активности: 0 = не активен; 1 = активен
+     */
     @Column(name = "is_active", nullable = false)
     private int is_active;
 

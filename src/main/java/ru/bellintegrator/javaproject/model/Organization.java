@@ -17,6 +17,9 @@ import java.util.Set;
 @Table(name = "Organization")
 public class Organization {
 
+    /**
+    * Уникальный идентификатор
+    */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -28,24 +31,45 @@ public class Organization {
     @Version
     private Integer version;
 
+    /**
+     * Наименование организации
+     */
     @Column(name = "name", nullable = false)
     private String name;
 
+    /**
+     * Полное наименование организации
+     */
     @Column(name = "full_name", nullable = false)
     private String full_name;
 
+    /**
+     * ИНН
+     */
     @Column(name = "inn", nullable = false)
     private int inn;
 
+    /**
+     * КПП
+     */
     @Column(name = "kpp", nullable = false)
     private int kpp;
 
+    /**
+     * Адрес организации
+     */
     @Column(name = "address", nullable = false)
     private String address;
 
+    /**
+     * Телефон организации
+     */
     @Column(name = "phone")
     private String phone;
 
+    /**
+     * Признак активности: 0 = не активен; 1 = активен.
+     */
     @Column(name = "is_active", nullable = false)
     private int is_active;
 

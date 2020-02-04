@@ -18,7 +18,7 @@ public class Country {
     @Column(name = "code")
     private int code;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "Country", cascade = CascadeType.ALL)

@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS User (
     middle_name         VARCHAR(20)                     COMMENT 'Отчество',
     position            VARCHAR(50) NOT NULL            COMMENT 'Позиция пользователя',
     phone               VARCHAR(12)                     COMMENT 'Телефон пользователя',
-    doc_code            VARCHAR(50) NOT NULL            COMMENT 'Имя документа удостоверяющего личность',
+    doc_code            VARCHAR(50) NOT NULL            COMMENT 'Код документа удостоверяющего личность',
     doc_number          INTEGER                         COMMENT 'Номер документа удостоверяющего личность',
     doc_date            DATE                            COMMENT 'Дата выдачи документа удостоверяющего личность',
     citizenship_code    INTEGER NOT NULL                COMMENT 'Код гражданства',

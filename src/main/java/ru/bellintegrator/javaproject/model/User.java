@@ -14,6 +14,9 @@ import java.util.GregorianCalendar;
 @Table(name = "User")
 public class User {
 
+    /**
+     * Уникальный идентификатор
+     */
     @Id
     @Column(name = "id")
     private Long id;
@@ -24,36 +27,69 @@ public class User {
     @Version
     private Integer version;
 
+    /**
+     * Идентификатор офиса
+     */
     @Column(name = "office_id", nullable = false)
     private Long office_id;
 
+    /**
+     * Имя
+     */
     @Column(name = "first_name", nullable = false)
     private String first_name;
 
+    /**
+     * Фамилия
+     */
     @Column(name = "second_name")
     private String second_name;
 
+    /**
+     * Отчество
+     */
     @Column(name = "middle_name")
     private String middle_name;
 
+    /**
+     * Позиция пользователя
+     */
     @Column(name = "position", nullable = false)
     private String position;
 
+    /**
+     * Телефон пользователя
+     */
     @Column(name = "phone")
     private String phone;
 
+    /**
+     * Код документа удостоверяющего личность
+     */
     @Column(name = "doc_code", nullable = false)
     private String doc_code;
 
+    /**
+     * Номер документа удостоверяющего личность
+     */
     @Column(name = "doc_number")
     private int doc_number;
 
+    /**
+     * Дата выдачи документа удостоверяющего личность
+     */
     @Column(name = "doc_date")
     private GregorianCalendar doc_date; //???
 
+    /**
+     * Код гражданства
+     */
     @Column(name = "citizenship_code", nullable = false)
     private int citizenship_code;
 
+    /**
+     * Признак идентификации: 0 = не активен; 1 = активен.
+     */
     @Column(name = "is_identified", nullable = false)
     private int is_identified;
 
