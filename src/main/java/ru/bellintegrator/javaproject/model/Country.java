@@ -6,7 +6,6 @@ import javax.persistence.Id;
 import javax.persistence.Column;
 import javax.persistence.OneToMany;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.CascadeType;
 import java.util.Set;
 
@@ -21,8 +20,7 @@ public class Country {
     @Column(name = "name",nullable = false)
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "Country", cascade = CascadeType.ALL)
-    @JoinColumn(name = "citizenship_code")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "country", cascade = CascadeType.ALL)
     private Set<User> users;
 
     public int getCountryCode() {

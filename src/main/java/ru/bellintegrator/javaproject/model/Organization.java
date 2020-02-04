@@ -10,7 +10,6 @@ import javax.persistence.Version;
 import javax.persistence.OneToMany;
 import javax.persistence.FetchType;
 import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
 import java.util.Set;
 
 @Entity
@@ -41,7 +40,7 @@ public class Organization {
      * Полное наименование организации
      */
     @Column(name = "full_name", nullable = false)
-    private String full_name;
+    private String fullName;
 
     /**
      * ИНН
@@ -71,10 +70,9 @@ public class Organization {
      * Признак активности: 0 = не активен; 1 = активен.
      */
     @Column(name = "is_active", nullable = false)
-    private int is_active;
+    private int isActive;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "Organization", cascade = CascadeType.ALL)
-    @JoinColumn(name = "organization_id")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "organization", cascade = CascadeType.ALL)
     private Set<Office> offices;
 
     public Long getOrgId() {
@@ -90,11 +88,11 @@ public class Organization {
     }
 
     public String getOrgFullName() {
-        return full_name;
+        return fullName;
     }
 
-    public void setOrgFullName(String full_name) {
-        this.full_name = full_name;
+    public void setOrgFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getOrgInn() {
@@ -130,11 +128,11 @@ public class Organization {
     }
 
     public int getOrgIsActive() {
-        return is_active;
+        return isActive;
     }
 
-    public void setOrgIsActive(int is_active) {
-        this.is_active = is_active;
+    public void setOrgIsActive(int isActive) {
+        this.isActive = isActive;
     }
 
     public Set<Office> getOffices() {

@@ -36,7 +36,7 @@ public class Office {
      * Идентификатор организации
      */
     @Column(name = "organization_id", nullable = false)
-    private Long organization_id;
+    private Long organizationId;
 
     /**
      * Наименование офиса
@@ -60,13 +60,13 @@ public class Office {
      * Признак активности: 0 = не активен; 1 = активен
      */
     @Column(name = "is_active", nullable = false)
-    private int is_active;
+    private int isActive;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "organization_id", insertable = false, updatable = false)
     private Organization organization;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "Office", cascade = CascadeType.ALL)
-    @JoinColumn(name = "office_id")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "office", cascade = CascadeType.ALL)
     private Set<User> users;
 
     public Long getOfficeId() {
@@ -74,11 +74,11 @@ public class Office {
     }
 
     public Long getOfficeOrganizationId() {
-        return organization_id;
+        return organizationId;
     }
 
-    public void setOfficeOrganizationId(Long organization_id) {
-        this.organization_id = organization_id;
+    public void setOfficeOrganizationId(Long organizationId) {
+        this.organizationId = organizationId;
     }
 
     public String getOfficeName() {
@@ -106,11 +106,11 @@ public class Office {
     }
 
     public int getOfficeIsActive() {
-        return is_active;
+        return isActive;
     }
 
-    public void setOfficeIsActive(int is_active) {
-        this.is_active = is_active;
+    public void setOfficeIsActive(int isActive) {
+        this.isActive = isActive;
     }
 
     public Organization getOfficeOrganization() {

@@ -8,6 +8,7 @@ import javax.persistence.Version;
 import javax.persistence.ManyToOne;
 import javax.persistence.FetchType;
 import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
 import java.util.GregorianCalendar;
 
 @Entity
@@ -31,25 +32,25 @@ public class User {
      * Идентификатор офиса
      */
     @Column(name = "office_id", nullable = false)
-    private Long office_id;
+    private Long officeId;
 
     /**
      * Имя
      */
     @Column(name = "first_name", nullable = false)
-    private String first_name;
+    private String firstName;
 
     /**
      * Фамилия
      */
     @Column(name = "second_name")
-    private String second_name;
+    private String secondName;
 
     /**
      * Отчество
      */
     @Column(name = "middle_name")
-    private String middle_name;
+    private String middleName;
 
     /**
      * Позиция пользователя
@@ -67,39 +68,42 @@ public class User {
      * Код документа удостоверяющего личность
      */
     @Column(name = "doc_code", nullable = false)
-    private String doc_code;
+    private String docCode;
 
     /**
      * Номер документа удостоверяющего личность
      */
     @Column(name = "doc_number")
-    private int doc_number;
+    private int docNumber;
 
     /**
      * Дата выдачи документа удостоверяющего личность
      */
     @Column(name = "doc_date")
-    private GregorianCalendar doc_date; //???
+    private GregorianCalendar docDate; //???
 
     /**
      * Код гражданства
      */
     @Column(name = "citizenship_code", nullable = false)
-    private int citizenship_code;
+    private int citizenshipCode;
 
     /**
      * Признак идентификации: 0 = не активен; 1 = активен.
      */
     @Column(name = "is_identified", nullable = false)
-    private int is_identified;
+    private int isIdentified;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "office_id", insertable = false, updatable = false)
     private Office office;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "citizenship_code", insertable = false, updatable = false)
     private Country country;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "doc_code", insertable = false, updatable = false)
     private Doc doc;
 
     public Long getUserId() {
@@ -110,36 +114,36 @@ public class User {
         this.id = id;
     }
 
-    public void setUserOfficeId(Long office_id) {
-        this.office_id = office_id;
+    public void setUserOfficeId(Long officeId) {
+        this.officeId = officeId;
     }
 
     public Long getUserOfficeId() {
-        return office_id;
+        return officeId;
     }
 
     public String getFirstName() {
-        return first_name;
+        return firstName;
     }
 
-    public void setFirstName(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getSecondName() {
-        return second_name;
+        return secondName;
     }
 
-    public void setUserSecondName(String second_name) {
-        this.second_name = second_name;
+    public void setUserSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
     public String getUserMiddleName() {
-        return middle_name;
+        return middleName;
     }
 
-    public void setUserMiddleName(String middle_name) {
-        this.middle_name = middle_name;
+    public void setUserMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public String getUserPosition() {
@@ -159,43 +163,43 @@ public class User {
     }
 
     public String getUserDocCode() {
-        return doc_code;
+        return docCode;
     }
 
-    public void setUserDocCode(String doc_code) {
-        this.doc_code = doc_code;
+    public void setUserDocCode(String docCode) {
+        this.docCode = docCode;
     }
 
     public int getUserDocNumber() {
-        return doc_number;
+        return docNumber;
     }
 
-    public void setDocNumber(int doc_number) {
-        this.doc_number = doc_number;
+    public void setDocNumber(int docNumber) {
+        this.docNumber = docNumber;
     }
 
     public GregorianCalendar getUserDocDate() {
-        return doc_date;
+        return docDate;
     }
 
-    public void setUserDocDate(GregorianCalendar doc_date) {
-        this.doc_date = doc_date;
+    public void setUserDocDate(GregorianCalendar docDate) {
+        this.docDate = docDate;
     }
 
     public int getUserCitizenshipCode() {
-        return citizenship_code;
+        return citizenshipCode;
     }
 
-    public void setCitizenshipCode(int citizenship_code) {
-        this.citizenship_code = citizenship_code;
+    public void setCitizenshipCode(int citizenshipCode) {
+        this.citizenshipCode = citizenshipCode;
     }
 
     public int getUserIsIdentified() {
-        return is_identified;
+        return isIdentified;
     }
 
-    public void setUserIsIdentified(int is_identified) {
-        this.is_identified = is_identified;
+    public void setUserIsIdentified(int isIdentified) {
+        this.isIdentified = isIdentified;
     }
 
     public Office getUserOffice() {

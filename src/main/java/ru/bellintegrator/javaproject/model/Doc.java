@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.OneToMany;
 import javax.persistence.FetchType;
 import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
 import java.util.Set;
 
 @Entity
@@ -21,8 +20,7 @@ public class Doc {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "Doc", cascade = CascadeType.ALL)
-    @JoinColumn(name = "doc_code")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "doc", cascade = CascadeType.ALL)
     private Set<User> users;
 
     public int getDocCode() {
